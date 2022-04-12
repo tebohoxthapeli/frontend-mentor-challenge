@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn-primary {
+        @apply rounded-lg bg-primary-400 py-[1em] font-700 text-neutral-100 shadow-[0_15px_20px_5px] shadow-primary-400/40 hocus:bg-primary-300;
+    }
+}
+
+@layer base {
+    html:focus-within {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply grid place-items-center text-400 font-400;
+        text-rendering: optimizeSpeed;
+        font-family: "Red Hat Display", sans-serif;
+        background-image: url(/public/images/pattern-background-desktop.svg);
+        background-size: contain;
+    }
+
+    a:not([class]) {
+        text-decoration-skip-ink: auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html:focus-within {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
