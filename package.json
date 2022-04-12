@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "tailwind-build": "tailwindcss -i ./src/input.css -o ./dist/output.css -w",
+        "tailwind-build-min": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
         "postcss-build": "postcss ./src/input.css -o ./dist/output.css -w --verbose"
     },
     "browserslist": [
@@ -16,6 +17,7 @@
     "author": "Teboho Thapeli",
     "license": "MIT",
     "devDependencies": {
+        "cssnano": "^5.1.7",
         "postcss-cli": "^9.1.0",
         "prettier-plugin-tailwindcss": "^0.1.8",
         "tailwindcss": "^3.0.23"
